@@ -1,0 +1,135 @@
+<!--  -->
+<div>
+    <div class="deleteConfirmed" *ngIf="remote.confirm">
+        <div class="delete-box">
+            <span class="close-icon">×</span>
+            <!-- <span class="success-icon">Success</span> -->
+            <h5>Are you sure?</h5>
+            <p>Do you really want to remove this post. <br>This post cannot be restore.</p>
+        </div>
+        <div class="btn-group">
+            <button class="bg-danger" (click)="removePost()">Quite</button>
+            <button class="bg-secondary close" (click)="remote.confirm=false">No</button>
+        </div>
+    </div>
+</div>
+<!-- Post content-->
+<article class="p-2 mb-2 border-top border-5">
+    <!-- Post header-->
+    <header class="mb-4 mt-2">
+        <!-- Post title-->
+        <!-- Image user post -->
+        <div *ngIf="post.user.id==user.UID()" style="float: right;">
+            <img *ngIf="!remote.edit" (click)="remote.confirm=true" class="icon-post"
+                src="https://img.icons8.com/color/48/000000/delete-forever.png" title="Remove" />
+            <img *ngIf="!remote.edit" (click)="remote.edit=true" class="icon-post"
+                src="https://img.icons8.com/color/48/000000/edit--v2.png" title="Edit" />
+            <img *ngIf="remote.edit" (click)="saveContent()" [style.cursor]="'pointer'"
+                src="https://img.icons8.com/cute-clipart/64/000000/save.png" title="Save" />
+        </div>
+        <div class="float-left">
+            <span class="">
+                <img class="photoURL" [src]="post.user.photoURL" alt="">
+            </span>
+            <span class="">
+                <a href="profile/{{ post.user.id }}">
+                    <strong class="fw-bolder mb-2" style="font-size: 20px;">{{ post.user.displayName }}</strong>
+                </a>
+            </span>
+        </div>
+
+        <!--  -->
+
+        <!-- Post meta content-->
+        <small class="text-muted fst-italic mb-2">Posted on {{ post.created_at| formatTime }}</small>
+        <!-- Post categories--> <br>
+        <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
+        <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
+    </header>
+    <!-- Post content-->
+    <div class="post-content">
+        <section class="mb-5">
+            <p *ngIf="!remote.edit" class="fs-5 mb-4">{{ post.content }}</p>
+            <div class="mb-4" *ngIf="remote.edit">
+                <textarea [(ngModel)]="post.content" class="form-control" rows="3">
+
+                    </textarea>
+            </div>
+        </section>
+        <!-- Preview image figure-->
+        <div class="container-image">
+            <figure class="mb-4" *ngIf="post.imageURL">
+                <img class="img-fluid rounded" [src]="post.imageURL" alt="..."
+                    title="Upload by {{ post.user.displayName }}" />
+            </figure>
+        </div>
+    </div>
+    <div class="">
+        <b [style]="{
+                float: 'right', marginTop: '10px', marginLeft: '3px',
+                textDecoration: 'underline', cursor: 'pointer'
+            }"
+            (click)="remote.showComments?remote.showComments=false:remote.showComments=true"
+
+        >
+           {{ remote.showComments?'Hide ': comments.length }} comments
+            
+        </b>
+        <div class="post-like">
+            <div class="like-icon" (click)="reactLike()">
+                <svg class="like-icon"
+                [style]="{
+                    color: isvalLike ? 'blue': ''
+                }" 
+                xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                fill="currentColor" class="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a9.84 9.84 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733.058.119.103.242.138.363.077.27.113.567.113.856 0 .289-.036.586-.113.856-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.163 3.163 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.82 4.82 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+            </svg>
+            </div>
+            <small 
+                (mouseover)="remote.likes=true"
+                (mouseleave)="remote.likes=false"
+                [style]="{
+                    marginTop: '10px', marginLeft: '3px', cursor: 'pointer'
+                }">
+                {{ likes| formatStringLike: isvalLike }}
+            </small>
+        </div>
+        <!-- List like this post -->
+        <div class="pt-2" 
+            
+            style="padding-left: 40px;" *ngIf="remote.likes">
+            <div class="mb-1" *ngFor="let like of likes">
+                <span class="">
+                    <img class="photoLike" [src]="like.imageURL" alt="">
+                </span>
+                <small class="">
+                    <strong class="fw-bolder">{{ like.name }}</strong>
+                </small>
+            </div>
+        </div>
+    </div>
+</article>
+<!--  -->
+<!-- Comments section-->
+<section class="mb-5">
+    <div class="card bg-light">
+        <div class="card-body">
+            <!-- Comment form-->
+            <div class="form-comment">
+                <img class="photoURL" [src]="user.photoURL()" alt="">
+                <div class="mb-4">
+                    <input [(ngModel)]="textComment" (keyup.enter)="sendComment()"
+                        type="text" class="login__input" placeholder="Write something for {{ post.user.displayName }}"/>
+                </div>
+            </div>
+            <div *ngIf="remote.showComments">
+                <app-comment 
+                    *ngFor="let comment of comments" 
+                    [postID]="post.id"
+                    [comment]="comment">
+                </app-comment>
+            </div>
+        </div>
+    </div>
+</section>

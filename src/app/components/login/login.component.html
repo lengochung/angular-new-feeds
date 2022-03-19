@@ -1,0 +1,57 @@
+<title>{{ title }}</title>
+<div class="container">
+	<div class="screen">
+		<div class="screen__content">
+            
+			<form class="login" [formGroup]="form" (ngSubmit)="loginWithEmailAndPassword()">
+                <div class="text-danger"
+                    *ngIf="isvalLog"
+                >
+                    Login failed!
+                </div>
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" formControlName="email"  class="login__input" placeholder="Email"> <br>
+                    <small class="text-danger" 
+                        *ngIf="form.get('email').dirty && (form.get('email').errors?.required || form.get('email').errors?.email)">
+                        Invalid Email
+                    </small>
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" formControlName="password" class="login__input" placeholder="Password"> <br>
+                    <small class="text-danger" 
+                        *ngIf="form.get('password').dirty && form.get('password').errors?.required">
+                        Invalid password
+                    </small>
+				</div>
+				<button type="submit" class="button login__submit">
+					<span class="button__text">Log In Now</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>
+				<a href="register" class="mt-2">
+					<small>Create Account?</small>
+				</a>				
+			</form>
+			<div class="social-login">
+				<h3>Log in with</h3>
+				<div class="social-icons">
+					<span style="cursor: pointer;" (click)="loginWithGoogle()" class="social-login__icon fab fa-instagram">
+                        <img src="https://img.icons8.com/color/48/000000/google-logo.png"/>
+                    </span>
+					<span style="cursor: pointer;" (click)="loginWithGithub()" class="social-login__icon fab fa-facebook">
+                        <img 
+							class="rounded-circle" width="40"
+							src="assets/images/github.png"/>
+                    </span>
+				</div>
+			</div>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>		
+	</div>
+</div>

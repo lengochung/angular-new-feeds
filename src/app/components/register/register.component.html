@@ -1,0 +1,81 @@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+            <div class="col-lg-6 col-md-8 login-box">
+                <div class="col-lg-12 login-key">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                </div>
+                <a href="login">
+                    <small>Back to Login</small>
+                </a>
+                <div class="col-lg-12 login-title">
+                    REGISTER
+                </div>
+
+                <div class="col-lg-12 login-form">
+                    <div class="col-lg-12 login-form">
+                        <form [formGroup]="form" (submit)="done()">
+                            <div class="form-group">
+                                <label class="form-control-label">FULLNAME</label>
+                                <input 
+                                    formControlName="fullname"
+                                    type="text" class="form-control">
+                                <small class="text-danger"
+                                    *ngIf="form.get('fullname').errors?.required&&form.get('fullname').dirty"
+                                >
+                                    Full name is required
+                                </small>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">EMAIL</label>
+                                <input 
+                                    formControlName="email"
+                                    type="email" class="form-control">
+                                <small class="text-danger"
+                                    *ngIf="form.get('email').errors?.email&&form.get('email').dirty"
+                                >
+                                    Email invalid
+                                </small>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">PASSWORD</label>
+                                <input 
+                                    formControlName="password"
+                                    type="password" class="form-control" >
+                                <small class="text-danger"
+                                    *ngIf="form.get('password').errors?.required&&form.get('password').dirty"
+                                >
+                                    Password is required
+                                </small>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label">CONFIRM PASSWORD</label>
+                                <input 
+                                    formControlName="confirm"
+                                    type="password" class="form-control">
+                                <small class="text-danger"
+                                    *ngIf="form.get('confirm').errors?.required&&form.get('confirm').dirty"
+                                >
+                                    Confirm password is required
+                                </small>
+                            </div>
+
+                            <div class="col-lg-12 loginbttm">
+                                <div class="col-lg-6 login-btm login-text">
+                                    <!-- Error Message -->
+                                </div>
+                                <div class="col-lg-6 login-btm login-button">
+                                    <button type="submit" class="btn btn-outline-primary">DONE</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-2"></div>
+            </div>
+        </div>
+
+
+
+

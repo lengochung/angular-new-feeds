@@ -1,0 +1,25 @@
+.social-login {	
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	text-align: center;
+	bottom: 0px;
+	right: 0px;
+	color: #fff;
+    border-radius: 360px;
+}
+
+.social-icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.social-login__icon:hover {
+	transform: scale(1.5);	
+}
+
+#photoURL {
+    width: 35px; height: 35px;
+    border-radius: 360px;
+}

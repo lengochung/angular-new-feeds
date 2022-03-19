@@ -1,0 +1,219 @@
+<app-menu></app-menu>
+<!-- Container edit -->
+<div class="container" *ngIf="user!=undefined">
+    <div class="row my-4">
+        <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12" style="margin: auto;">
+            <script src="https://cdn01.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
+            <script src="https://cdn02.jotfor.ms/static/jotform.forms.js?3.3.31788" type="text/javascript"></script>
+            <script src="https://cdn03.jotfor.ms/js/vendor/jquery-1.8.0.min.js?v=3.3.31788"
+                type="text/javascript"></script>
+            <script defer src="https://cdn01.jotfor.ms/js/vendor/maskedinput.min.js?v=3.3.31788"
+                type="text/javascript"></script>
+            <script defer src="https://cdn02.jotfor.ms/js/vendor/jquery.maskedinput.min.js?v=3.3.31788"
+                type="text/javascript"></script>
+            <script type="text/javascript">	JotForm.newDefaultTheme = true;
+                JotForm.extendsNewTheme = false;
+                JotForm.newPaymentUIForNewCreatedForms = false;
+                JotForm.newPaymentUI = true;
+
+                JotForm.init(function () {
+                    /*INIT-START*/
+                    JotForm.setPhoneMaskingValidator('input_48_full', '(###) ###-####');
+                    /*INIT-END*/
+                });
+
+                JotForm.prepareCalculationsOnTheFly([null, { "name": "clickTo", "qid": "1", "text": "Edit Profile", "type": "control_head" }, null, { "name": "gender", "qid": "3", "text": "Gender", "type": "control_dropdown" }, { "name": "displayName", "qid": "4", "text": "Display Name", "type": "control_fullname" }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { "name": "submit", "qid": "19", "text": "Clear Fields", "type": "control_button" }, { "name": "submit20", "qid": "20", "text": "Submit Application", "type": "control_button" }, null, null, { "name": "address", "qid": "23", "text": "Address", "type": "control_address" }, { "name": "birthDate24", "qid": "24", "text": "Birth Date", "type": "control_birthdate" }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { "description": "", "name": "nickname", "qid": "47", "text": "Nickname", "type": "control_fullname" }, { "description": "", "name": "phoneNumber", "qid": "48", "text": "Phone Number", "type": "control_phone" }]);
+                setTimeout(function () {
+                    JotForm.paymentExtrasOnTheFly([null, { "name": "clickTo", "qid": "1", "text": "", "type": "control_head" }, null, { "name": "gender", "qid": "3", "text": "Gender", "type": "control_dropdown" }, { "name": "displayName", "qid": "4", "text": "Display Name", "type": "control_fullname" }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { "name": "submit", "qid": "19", "text": "Clear Fields", "type": "control_button" }, { "name": "submit20", "qid": "20", "text": "Submit Application", "type": "control_button" }, null, null, { "name": "address", "qid": "23", "text": "Address", "type": "control_address" }, { "name": "birthDate24", "qid": "24", "text": "Birth Date", "type": "control_birthdate" }, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, { "description": "", "name": "nickname", "qid": "47", "text": "Nickname", "type": "control_fullname" }, { "description": "", "name": "phoneNumber", "qid": "48", "text": "Phone Number", "type": "control_phone" }]);
+                }, 20); 
+            </script>
+            <style type="text/css">
+                @media print {
+                    .form-section {
+                        display: inline !important
+                    }
+
+                    .form-pagebreak {
+                        display: none !important
+                    }
+
+                    .form-section-closed {
+                        height: auto !important
+                    }
+
+                    .page-section {
+                        position: initial !important
+                    }
+                }
+            </style>
+            <link type="text/css" rel="stylesheet"
+                href="https://cdn01.jotfor.ms/themes/CSS/5e6b428acc8c4e222d1beb91.css?themeRevisionID=5eb3b4ae85bd2e1e2966db96" />
+            <link type="text/css" rel="stylesheet"
+                href="https://cdn02.jotfor.ms/css/styles/payment/payment_styles.css?3.3.31788" />
+            <link type="text/css" rel="stylesheet"
+                href="https://cdn03.jotfor.ms/css/styles/payment/payment_feature.css?3.3.31788" />
+            <!--  -->
+
+            <form class="jotform-form" action="https://submit.jotform.com/submit/220730900495452/" method="post"
+                name="form_220730900495452" id="220730900495452" accept-charset="utf-8" autocomplete="on">
+                <input type="hidden" name="formID" value="220730900495452" />
+                <input type="hidden" id="JWTContainer" value="" />
+                <input type="hidden" id="cardinalOrderNumber" value="" />
+                <div role="main" class="form-all">
+                    <style>
+                        .form-all:before {
+                            background: none;
+                        }
+                    </style>
+                    <ul class="form-section page-section">
+                        <li id="cid_1" class="form-input-wide" data-type="control_head">
+                            <div class="form-header-group  header-large">
+                                <div class="header-text httal htvam">
+                                    <h1 id="header_1" class="form-header" data-component="header">
+                                        Edit Profile
+                                    </h1>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Display Name -->
+                        <li class="form-line" data-type="control_fullname" id="id_4">
+                            <label class="form-label form-label-top form-label-auto" id="label_4" for="first_4"> Display
+                                Name </label>
+                            <div id="cid_4" class="form-input-wide" data-layout="full">
+                                <div data-wrapper-react="true">
+                                    <span class="form-sub-label-container" style="vertical-align:top"
+                                        data-input-type="first">
+                                        <input [(ngModel)]="user.displayName" type="text" id="first_4"
+                                            [style]="{border: alert.displayName.length > 0?'red 1px solid': ''}"
+                                            name="q4_displayName[first]" class="form-textbox" data-defaultvalue=""
+                                            autoComplete="section-input_4 given-name" size="10" value=""
+                                            data-component="first" aria-labelledby="label_4 sublabel_4_first" />
+                                        <label
+                                            *ngIf="alert.displayName.length > 0"
+                                            class="form-sub-label text-danger" for="first_4" id="sublabel_4_first"
+                                            style="min-height:13px" aria-hidden="false"> {{ alert.displayName }} </label>
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- Nickname -->
+                        <li class="form-line" data-type="control_fullname" id="id_47">
+                            <label class="form-label form-label-top form-label-auto" id="label_47" for="first_47"> Nick
+                                Name </label>
+                            <div id="cid_47" class="form-input-wide" data-layout="full">
+                                <div data-wrapper-react="true">
+                                    <span class="form-sub-label-container" style="vertical-align:top"
+                                        data-input-type="first">
+                                        <input [(ngModel)]="user.nickname" type="text" id="first_47"
+                                            [style]="{border: alert.nickname.length > 0?'red 1px solid': ''}"
+                                            name="q47_nickname[first]" class="form-textbox" data-defaultvalue=""
+                                            autoComplete="section-input_47 given-name" size="10" value=""
+                                            data-component="first" aria-labelledby="label_47 sublabel_47_first" />
+                                        <label 
+                                            *ngIf="alert.nickname.length > 0"
+                                            class="form-sub-label text-danger" for="first_47" id="sublabel_47_first"
+                                            style="min-height:13px" aria-hidden="false"> {{ alert.nickname }} </label>
+                                    </span>
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="form-line" data-type="control_phone" id="id_48">
+                            <label class="form-label form-label-top form-label-auto" id="label_48" for="input_48_full">
+                                Phone Number </label>
+                            <div id="cid_48" class="form-input-wide" data-layout="half">
+                                <span class="form-sub-label-container" style="vertical-align:top">
+                                    <input [(ngModel)]="user.phoneNumber" type="tel" id="input_48_full"
+                                        [style]="{border: alert.phoneNumber.length > 0?'red 1px solid': ''}"
+                                        name="q48_phoneNumber[full]" data-type="mask-number"
+                                        class="mask-phone-number form-textbox validate[Fill Mask]" data-defaultvalue=""
+                                        autoComplete="section-input_48 tel-national" style="width:310px"
+                                        data-masked="true" value="" placeholder="(000) 000-0000" data-component="phone"
+                                        aria-labelledby="label_48 sublabel_48_masked" />
+                                    <label 
+                                        *ngIf="alert.phoneNumber.length > 0"
+                                        class="form-sub-label text-danger" for="input_48_full" id="sublabel_48_masked"
+                                        style="min-height:13px" aria-hidden="false"> {{ alert.phoneNumber }}
+                                    </label>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="form-line form-line-column form-col-2" data-type="control_dropdown" id="id_3">
+                            <label class="form-label form-label-top" id="label_3" for="input_3"> Gender </label>
+                            <div id="cid_3" class="form-input-wide" data-layout="half">
+                                <select [(ngModel)]="user.gender" class="form-dropdown" id="input_3" name="q3_gender"
+                                    [style]="{border: alert.gender.length > 0?'red 1px solid': ''}"
+                                    style="width:310px" data-component="dropdown">
+                                    <option value=""> Please Select </option>
+                                    <option value="Male"> Male </option>
+                                    <option value="Female"> Female </option>
+                                    <option value="N/A"> N/A </option>
+                                </select>
+                                <label 
+                                        *ngIf="alert.gender.length > 0"
+                                        class="form-sub-label text-danger" for="input_48_full" id="sublabel_48_masked"
+                                        style="min-height:13px" aria-hidden="false"> {{ alert.gender }}
+                                    </label>
+                            </div>
+                        </li>
+                        <li class="form-line" data-type="control_address" id="id_23">
+                            <label class="form-label form-label-top form-label-auto" id="label_23"
+                                for="input_23_addr_line1"> Address </label>
+                            <div id="cid_23" class="form-input-wide" data-layout="full">
+                                <div summary="" class="form-address-table jsTest-addressField">
+                                    <div class="form-address-line-wrapper jsTest-address-line-wrapperField">
+                                        <span
+                                            class="form-address-line form-address-street-line jsTest-address-lineField">
+                                            <span class="form-sub-label-container" style="vertical-align:top">
+                                                <input [(ngModel)]="user.address" type="text" id="input_23_addr_line1"
+                                                    [style]="{border: alert.address.length > 0?'red 1px solid': ''}"
+                                                    name="q23_address[addr_line1]"
+                                                    class="form-textbox form-address-line" data-defaultvalue=""
+                                                    autoComplete="section-input_23 address-line1" value=""
+                                                    data-component="address_line_1"
+                                                    aria-labelledby="label_23 sublabel_23_addr_line1" required="" />
+                                                <label 
+                                                    *ngIf="alert.address"
+                                                    class="form-sub-label text-danger" for="input_23_addr_line1"
+                                                    id="sublabel_23_addr_line1" style="min-height:13px"
+                                                    aria-hidden="false"> {{ alert.address }} </label>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </li>
+                        <li class="form-line form-line-column form-col-1" data-type="control_button" id="id_20">
+                            <div id="cid_20" class="form-input-wide" data-layout="full">
+                                <div data-align="left"
+                                    class="form-buttons-wrapper form-buttons-left   jsTest-button-wrapperField">
+                                    <button (click)="save()" id="input_20" type="submit"
+                                        class="form-submit-button submit-button jf-form-buttons jsTest-submitField"
+                                        data-component="button" data-content="">
+                                        Save
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <!--  -->
+                    </ul>
+                </div>
+                <script>
+                    JotForm.showJotFormPowered = "new_footer";
+                </script>
+                <script>
+                    JotForm.poweredByText = "Powered by Jotform";
+                </script>
+                <script type="text/javascript">
+                    var all_spc = document.querySelectorAll("form[id='220730900495452'] .si" + "mple" + "_spc");
+                    for (var i = 0; i < all_spc.length; i++) {
+                        all_spc[i].value = "220730900495452-220730900495452";
+                    }
+                </script>
+            </form>
+            <script src="https://cdn.jotfor.ms//js/vendor/smoothscroll.min.js?v=3.3.31788"></script>
+            <script src="https://cdn.jotfor.ms//js/errorNavigation.js?v=3.3.31788"></script>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<!-- Comment form-->
+<form class="mb-5" [formGroup]="form" (ngSubmit)="uploadPost()">
+    <!--  -->
+    <div class="row">
+        <div class="col-lg-{{ image? 4: 0 }} col-md-3 border" 
+            *ngIf="image"
+        >
+            <img [src]="image" id="preview-image">
+        </div>
+        <div class="col-lg-{{ image? 8: 12 }} col-md-9">
+            <textarea formControlName="content"
+                class="form-control" rows="3" placeholder="You should write something!"></textarea>
+            <input formControlName="file" id="file" (change)="imagePreview($event)"
+                class="btn-dark btn mt-2 visually-hidden" type="file" style="float: left;" />
+            <label for="file" *ngIf="!image" [style]="{cursor: 'pointer'}">
+                <i class="fa fa-arrow-up">
+                    <img src="https://img.icons8.com/fluency/48/000000/upload--v16.png"/>
+                        Image
+                </i>
+            </label>
+            <label for="" *ngIf="image" 
+                [style]="{cursor: 'pointer'}"
+                (click)="removeImage()"
+            >
+                <i class="fa fa-arrow-up">
+                    <img src="https://img.icons8.com/color/48/000000/delete-forever.png"/>
+                </i>
+            </label>
+            <button class="btn-dark btn mt-2 mr-3" type="submit" style="float: right;">Upload</button>
+        </div>
+  </div>
+  </form>
